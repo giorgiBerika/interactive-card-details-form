@@ -1,10 +1,15 @@
-import './App.css'
+
+import { CardSide, FormSide } from "./app-sides/main"
 
 function App() {
 
   return (
     <>
-    This is app!
+    <div className='w-screen h-screen bg-red-300 text-green'>
+      <CardSide />
+      <FormSide />
+
+    </div>
     </> 
   )
 }
