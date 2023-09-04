@@ -5,7 +5,14 @@ function App() {
 
   return (
     <>
-    <div className='w-screen h-screen bg-red-300 text-green'>
+    <div className={`
+      w-screen
+      min-h-screen
+      flex
+      items-center
+      justify-around
+      
+    `}>
       <CardSide />
       <FormSide />
 
