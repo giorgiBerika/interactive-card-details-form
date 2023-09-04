@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { CardBack, CardFront } from '../../components/main';
 
 interface CardSideProps {
 
@@ -9,7 +10,8 @@ const CardSide: FC<CardSideProps> = () =>
     return (
         <>
         <div>
-            Card Side
+            <CardFront />
+            <CardBack />
         </div>
         </>
     )

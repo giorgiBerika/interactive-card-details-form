@@ -11,8 +11,11 @@ function App() {
       flex
       items-center
       justify-around
+      relative
+
       
     `}>
+      
       <CardSide />
       <FormSide />
 
