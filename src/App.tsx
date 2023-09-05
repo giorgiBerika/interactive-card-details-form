@@ -14,6 +14,7 @@ function App() {
       relative
       font-custom
       font-normal
+      bg-red-700
 
       
     `}>

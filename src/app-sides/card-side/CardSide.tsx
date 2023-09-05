@@ -9,7 +9,11 @@ const CardSide: FC<CardSideProps> = () =>
 {
     return (
         <>
-        <div>
+        <div className={`
+         flex
+         flex-col
+         gap-9
+        `}>
             <CardFront />
             <CardBack />
         </div>
