@@ -1,1 +1,25 @@
+.input-title
+{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #21092F;
+}
+.input-style
+{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+    color: #21092F;
 
+    border-radius: 8px;
+    border: 1px solid  #DFDEE0;
+    background:  #FFF;
+    outline: none;
+}
+.input-style::placeholder
+{
+    opacity: 0.25;
+}
