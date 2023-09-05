@@ -13,6 +13,7 @@ function App() {
       justify-around
       relative
       font-custom
+      font-normal
 
       
     `}>

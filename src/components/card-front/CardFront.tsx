@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import ovalsSrc from '../../assets/ovals.png';
-
+import ovalsImg from '../../assets/card-logo.svg';
+import frontBackground from '../../assets/bg-card-front.png';
 interface CardFrontProps{
 
 }
@@ -13,19 +13,49 @@ const CardFront: FC<CardFrontProps> = () =>
             rounded-[10px]
             max-w-md
             w-full
-            bg-gradient-to-r from-purple-700 via-purple-500 to-purple-700
-        `}>
-            <img src={ovalsSrc}  alt='Ovals figures'/>
-             Card Front
+            pt-7
+            pr-8
+            pb-6
+            pl-8
+            cursor-pointer
+            bg-cover
+            bg-center
+        `} 
+         style={{
+            backgroundImage: `url(${frontBackground})`,
+            }}
+        >
+            <img src={ovalsImg}  alt='Ovals figures'/>
              <div className={`
               flex
               items-center
               gap-3
-             `}>
+              text-28
+              font-medium
+              tracking-wider
+              leading-normal
+              text-commonWhite
+              mt-[64px]
+             ` }>
                <span>0000</span>
                <span>0000</span>
                <span>0000</span>
                <span>0000</span> 
+             </div>
+             <div className={`
+              flex
+              items-center
+              justify-between
+              text-commonWhite
+              text-sm
+              leading-normal
+              font-normal
+              tracking-wide
+              uppercase
+              mt-[22.5px]
+             `}>
+                <h2>jane appleseed</h2>
+                <span>00/00</span>
              </div>
         </div>
         </>

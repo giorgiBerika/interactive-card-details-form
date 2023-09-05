@@ -16,6 +16,9 @@ export default {
         inputHover: '#6348FE',
         errorRed: '#FF5050',
         commonGrey: '#8F8694'
+      },
+      fontSize: {
+        '28': '28px'
       }
     },
   },
