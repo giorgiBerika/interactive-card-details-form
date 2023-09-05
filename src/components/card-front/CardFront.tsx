@@ -20,6 +20,7 @@ const CardFront: FC<CardFrontProps> = () =>
             cursor-pointer
             bg-cover
             bg-center
+            z-50
         `} 
          style={{
             backgroundImage: `url(${frontBackground})`,

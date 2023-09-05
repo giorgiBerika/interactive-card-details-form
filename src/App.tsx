@@ -1,6 +1,7 @@
 
 import { CardSide, FormSide } from "./app-sides/main"
-
+import bgMainDesktop from './assets/bg-main-desktop.png';
+import bgMainMobile from './assets/bg-main-mobile.png';
 function App() {
 
   return (
@@ -14,11 +15,19 @@ function App() {
       relative
       font-custom
       font-normal
-      bg-red-700
-
+      bg-commonWhite
+      relative
       
     `}>
-      
+      <img  
+      src={bgMainDesktop} 
+      alt="Gradient background"
+      className={`
+       absolute
+       top-0
+       left-0
+       min-h-screen
+      `} />
       <CardSide />
       <FormSide />
 
