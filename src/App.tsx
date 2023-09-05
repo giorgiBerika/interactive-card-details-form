@@ -12,6 +12,7 @@ function App() {
       items-center
       justify-around
       relative
+      font-custom
 
       
     `}>
