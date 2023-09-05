@@ -24,6 +24,7 @@ const FormSide: FC<FormSideProps> = () =>
                 <DateInput />
                 <CvcInput />
             </div>
+            <ConfirmBtn />
         </form>
         </>
     )

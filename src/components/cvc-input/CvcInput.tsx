@@ -15,10 +15,10 @@ const CvcInput: FC<CvcInputProps> = () =>
         `}>
            <h2 className={`
             input-title
-           `}>cardholder name</h2>
+           `}>cvc</h2>
            <input 
            type="text"
-           placeholder='cvc' 
+           placeholder='e.g.123' 
            className={`
             input-style
             w-48
