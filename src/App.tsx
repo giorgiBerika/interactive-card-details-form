@@ -2,7 +2,9 @@
 import { CardSide, FormSide } from "./app-sides/main"
 import './App.css';
 import bgMainDesktop from './assets/bg-main-desktop.png';
+
 import bgMainMobile from './assets/bg-main-mobile.png';
+
 function App() {
 
   return (
@@ -31,7 +33,6 @@ function App() {
       `} />
       <CardSide />
       <FormSide />
-
     </div>
     </> 
   )

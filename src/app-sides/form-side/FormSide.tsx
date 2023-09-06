@@ -12,7 +12,7 @@ const FormSide: FC<FormSideProps> = () =>
         <form className={`
          flex
          flex-col
-         gap-7
+         
         `}>
             <NameInput />
             <NumberInput />

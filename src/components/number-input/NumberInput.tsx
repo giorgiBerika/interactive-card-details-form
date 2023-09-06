@@ -12,6 +12,7 @@ const NumberInput: FC<NumberInputProps> = () =>
          flex
          flex-col
          gap-y-2.5
+         h-28
         `}>
            <h2 className={`
             input-title
@@ -25,7 +26,13 @@ const NumberInput: FC<NumberInputProps> = () =>
             w-96
             py-3
             pl-4
-           `} /> 
+           `} />
+          { false && <span className={`
+            text-errorRed
+            text-xs
+            leading-normal
+            font-medium
+           `}>Wrong format, numbers only</span> }
         </div>
         </>
     )

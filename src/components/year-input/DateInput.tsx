@@ -12,7 +12,8 @@ const DateInput: FC<DateInputProps> = () =>
          flex
          flex-col
          gap-y-2.5
-        `}>
+            h-28
+         `}>
            <h2 className={`
             input-title
            `}>cardholder name</h2>
@@ -26,9 +27,9 @@ const DateInput: FC<DateInputProps> = () =>
             w-20
             py-3
             pl-4
-            pr-9
-            uppercase
+            pr-29
             mr-2.5
+            uppercase
             `} /> 
             <input 
            type="text"
@@ -42,6 +43,14 @@ const DateInput: FC<DateInputProps> = () =>
             uppercase
             `} /> 
             </div>
+            {false && <span className={`
+             text-errorRed
+             text-xs
+             leading-normal
+             font-medium
+            `}>
+                Can't be blank
+            </span>}
         </div>
         </>
     )

@@ -18,6 +18,14 @@
     border: 1px solid  #DFDEE0;
     background:  #FFF;
     outline: none;
+    transition-duration: 100ms;
+}
+.input-style:hover
+{
+
+    border: 1px solid  #6348FE;
+    cursor: pointer;
+    transition-duration: 150ms;
 }
 .input-style::placeholder
 {

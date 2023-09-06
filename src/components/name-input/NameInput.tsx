@@ -12,6 +12,7 @@ const NameInput: FC<NameInputProps> = () =>
          flex
          flex-col
          gap-y-2.5
+         h-28
         `}>
            <h2 className={`
             input-title

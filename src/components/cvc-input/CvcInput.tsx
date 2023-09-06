@@ -12,6 +12,7 @@ const CvcInput: FC<CvcInputProps> = () =>
          flex
          flex-col
          gap-y-2.5
+         h-28
         `}>
            <h2 className={`
             input-title
@@ -24,7 +25,16 @@ const CvcInput: FC<CvcInputProps> = () =>
             w-48
             py-3
             pl-4
-           `} /> 
+           `} />
+           {false && <span className={`
+             text-errorRed
+             text-xs
+             leading-normal
+             font-medium
+            `}>
+                Can't be blank
+            </span>}
+            
         </div>
         </>
     )
