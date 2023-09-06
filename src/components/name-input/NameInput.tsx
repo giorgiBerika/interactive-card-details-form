@@ -1,11 +1,19 @@
 import { FC } from 'react';
 
 interface NameInputProps{
-
+ 
+ setHolderName: (newName: string) => void;
 }
 
-const NameInput: FC<NameInputProps> = () => 
+const NameInput: FC<NameInputProps> = ({setHolderName}) => 
 {
+    const onChangeHandler = (e: any) =>
+    {
+        const nameInput = e.target;
+        
+        setHolderName(nameInput.value);
+        
+    } 
     return (
         <>
         <div className={`
@@ -26,7 +34,9 @@ const NameInput: FC<NameInputProps> = () =>
             w-96
             py-3
             pl-4
-           `} /> 
+           `}
+            onChange={(e) => onChangeHandler(e)} 
+           /> 
         </div>
         </>
     )

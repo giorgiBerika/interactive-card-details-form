@@ -1,12 +1,13 @@
 
 import { CardSide, FormSide } from "./app-sides/main"
 import './App.css';
+import { useState } from "react";
 import bgMainDesktop from './assets/bg-main-desktop.png';
 
 import bgMainMobile from './assets/bg-main-mobile.png';
 
 function App() {
-
+  const [holderName, setHolderName ] = useState<string>('');
   return (
     <>
     <div className={`
@@ -31,8 +32,12 @@ function App() {
        left-0
        min-h-screen
       `} />
-      <CardSide />
-      <FormSide />
+      <CardSide 
+       holderName={holderName}
+      />
+      <FormSide 
+       setHolderName={setHolderName}
+      />
     </div>
     </> 
   )

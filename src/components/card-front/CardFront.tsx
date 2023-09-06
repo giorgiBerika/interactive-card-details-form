@@ -1,12 +1,14 @@
 import { FC } from 'react';
 import ovalsImg from '../../assets/card-logo.svg';
 import frontBackground from '../../assets/bg-card-front.png';
+import { useRef } from 'react';
 interface CardFrontProps{
-
+ holderName: string;
 }
 
-const CardFront: FC<CardFrontProps> = () => 
+const CardFront: FC<CardFrontProps> = ({holderName}) => 
 {
+    let cardholderName = useRef<string>('jane appleseed');
     return (
         <>
         <div className={`
@@ -55,7 +57,7 @@ const CardFront: FC<CardFrontProps> = () =>
               uppercase
               mt-[22.5px]
              `}>
-                <h2>jane appleseed</h2>
+                <h2>{holderName ||  cardholderName.current}</h2>
                 <span>00/00</span>
              </div>
         </div>
