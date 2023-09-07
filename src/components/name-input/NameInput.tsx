@@ -1,17 +1,17 @@
-import { FC } from 'react';
-
+import { FC, ChangeEvent } from 'react';
+import { useMyContext } from '../../App';
 interface NameInputProps{
  
- setHolderName: (newName: string) => void;
 }
 
-const NameInput: FC<NameInputProps> = ({setHolderName}) => 
+const NameInput: FC<NameInputProps> = ({}) => 
 {
-    const onChangeHandler = (e: any) =>
+    const { changeHolderName } = useMyContext();
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) =>
     {
+        // 
         const nameInput = e.target;
-        
-        setHolderName(nameInput.value);
+        changeHolderName(nameInput.value)
         
     } 
     return (

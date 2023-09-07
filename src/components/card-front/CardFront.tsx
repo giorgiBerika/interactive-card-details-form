@@ -2,13 +2,43 @@ import { FC } from 'react';
 import ovalsImg from '../../assets/card-logo.svg';
 import frontBackground from '../../assets/bg-card-front.png';
 import { useRef } from 'react';
+import { useMyContext } from '../../App';
 interface CardFrontProps{
- holderName: string;
+//  holderName: string;
 }
 
-const CardFront: FC<CardFrontProps> = ({holderName}) => 
+
+const changeNum = (state: string , num: string) =>
 {
+    if(state)
+    {
+        for(let i: number = 0; i < state.length; i++)
+        {
+            num.split('')[i] = state[i];
+        }
+    }
+}
+
+const CardFront: FC<CardFrontProps> = ({}) => 
+{
+    const { holderName, formattedNumber } = useMyContext();
+    let numberArr = formattedNumber.split(' ');
     let cardholderName = useRef<string>('jane appleseed');
+    
+    let firstFour = useRef(['0','0','0','0']);
+    let secondFour = useRef('0000');
+    let thirdFour = useRef('0000');
+    let fourthFour = useRef('0000');
+    if(formattedNumber)
+    {
+        if(numberArr[0]) {
+            for(let i = 0; i < numberArr[0].length; i++)
+            {
+                firstFour.current[i] = numberArr[0][i];
+            }
+        }
+    }
+    // console.log(formattedNumber.split(' ')[0][0]);
     return (
         <>
         <div className={`
@@ -40,10 +70,10 @@ const CardFront: FC<CardFrontProps> = ({holderName}) =>
               text-commonWhite
               mt-[64px]
              ` }>
-               <span>0000</span>
-               <span>0000</span>
-               <span>0000</span>
-               <span>0000</span> 
+               <span>{firstFour.current}</span>
+               <span>{secondFour.current}</span>
+               <span>{thirdFour.current}</span>
+               <span>{fourthFour.current}</span> 
              </div>
              <div className={`
               flex

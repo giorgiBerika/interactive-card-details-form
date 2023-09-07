@@ -2,10 +2,10 @@ import { FC } from 'react';
 import { NameInput, NumberInput, CvcInput, ConfirmBtn, DateInput } from '../../components/main';
 
 interface FormSideProps {
- setHolderName: (newName: string) => void;
+
 }
 
-const FormSide: FC<FormSideProps> = ({setHolderName}) => 
+const FormSide: FC<FormSideProps> = ({}) => 
 {
     return (
         <>
@@ -14,9 +14,7 @@ const FormSide: FC<FormSideProps> = ({setHolderName}) =>
          flex-col
          
         `}>
-            <NameInput 
-             setHolderName={setHolderName}
-            />
+            <NameInput />
             <NumberInput />
             <div className={`
              flex
