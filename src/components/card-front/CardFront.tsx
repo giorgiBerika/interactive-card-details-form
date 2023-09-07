@@ -3,42 +3,42 @@ import ovalsImg from '../../assets/card-logo.svg';
 import frontBackground from '../../assets/bg-card-front.png';
 import { useRef } from 'react';
 import { useMyContext } from '../../App';
+
 interface CardFrontProps{
-//  holderName: string;
+
 }
 
-
-const changeNum = (state: string , num: string) =>
+const fillString = (currentInput: string) =>
 {
-    if(state)
+    
+    let fullString = '';
+    if(currentInput.length < 4 && currentInput != '')
     {
-        for(let i: number = 0; i < state.length; i++)
+        fullString = currentInput;
+        let zeroNum = ( 4 - (currentInput.length) );
+        for(let i = 0; i < zeroNum; i++)
         {
-            num.split('')[i] = state[i];
+            fullString += '0'; 
         }
+        
+    }else
+    {
+        fullString = currentInput;
     }
+    // console.log(fullString)
+    return fullString;
 }
+
 
 const CardFront: FC<CardFrontProps> = ({}) => 
 {
     const { holderName, formattedNumber } = useMyContext();
-    let numberArr = formattedNumber.split(' ');
+   
     let cardholderName = useRef<string>('jane appleseed');
+    let defaultNum = useRef<string>('0000');
+    let numberArr = formattedNumber.split(' ');
     
-    let firstFour = useRef(['0','0','0','0']);
-    let secondFour = useRef('0000');
-    let thirdFour = useRef('0000');
-    let fourthFour = useRef('0000');
-    if(formattedNumber)
-    {
-        if(numberArr[0]) {
-            for(let i = 0; i < numberArr[0].length; i++)
-            {
-                firstFour.current[i] = numberArr[0][i];
-            }
-        }
-    }
-    // console.log(formattedNumber.split(' ')[0][0]);
+
     return (
         <>
         <div className={`
@@ -56,6 +56,7 @@ const CardFront: FC<CardFrontProps> = ({}) =>
         `} 
          style={{
             backgroundImage: `url(${frontBackground})`,
+            width: '410px'
             }}
         >
             <img src={ovalsImg}  alt='Ovals figures'/>
@@ -70,10 +71,10 @@ const CardFront: FC<CardFrontProps> = ({}) =>
               text-commonWhite
               mt-[64px]
              ` }>
-               <span>{firstFour.current}</span>
-               <span>{secondFour.current}</span>
-               <span>{thirdFour.current}</span>
-               <span>{fourthFour.current}</span> 
+               <span>{(numberArr[0]) ? fillString(numberArr[0]) : defaultNum.current}</span>
+               <span>{(numberArr[1]) ? fillString(numberArr[1]) : defaultNum.current}</span>
+               <span>{(numberArr[2]) ? fillString(numberArr[2]) : defaultNum.current}</span>
+               <span>{(numberArr[3]) ? fillString(numberArr[3]) : defaultNum.current}</span> 
              </div>
              <div className={`
               flex

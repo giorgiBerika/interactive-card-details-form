@@ -10,12 +10,14 @@ const NumberInput: FC<NumberInputProps> = () =>
       const {formattedNumber, changeFormattedNumber} = useMyContext();
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-
+      
+      
         const inputValue = event.target.value.replace(/\s/g, ''); // Remove existing spaces
         const formatted = inputValue.replace(/(.{4})/g, '$1 '); // Add a space after every four characters
         
         changeFormattedNumber(formatted);
-  };
+    };
+  
     return (
         <>
         <div className={`
