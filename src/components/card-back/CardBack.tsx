@@ -1,11 +1,14 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 import backBackground from '../../assets/bg-card-back.png';
+import { useMyContext } from '../../App';
 interface CardBackProps{
 
 }
 
 const CardBack: FC<CardBackProps> = () => 
 {
+    const {cardCvc } = useMyContext();
+    const cvcHolder = useRef<string>('000');
     return (
         <>
         <div className={`
@@ -34,8 +37,9 @@ const CardBack: FC<CardBackProps> = () =>
              leading-normal
              tracking-wider
              text-commonWhite
+             text-right
              
-            `}>000</span>
+            `}>{cardCvc || cvcHolder.current}</span>
         </div>
         </>
     )

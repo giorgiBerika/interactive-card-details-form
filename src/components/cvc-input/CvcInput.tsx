@@ -1,11 +1,17 @@
-import { FC } from 'react';
-
+import { ChangeEvent, FC } from 'react';
+import { useMyContext } from '../../App';
 interface CvcInputProps{
 
 }
 
 const CvcInput: FC<CvcInputProps> = () => 
 {
+    const { changeCardCvc} = useMyContext();
+    const cvcChangeHandler = (e: ChangeEvent<HTMLInputElement>) =>
+    {
+        const inputVal = e.target.value;
+        changeCardCvc(inputVal)
+    }
     return (
         <>
         <div className={`
@@ -18,6 +24,7 @@ const CvcInput: FC<CvcInputProps> = () =>
             input-title
            `}>cvc</h2>
            <input 
+           onChange={(e) => cvcChangeHandler(e)}
            type="text"
            placeholder='e.g.123' 
            className={`
@@ -25,6 +32,7 @@ const CvcInput: FC<CvcInputProps> = () =>
             w-48
             py-3
             pl-4
+            
            `} />
            {false && <span className={`
              text-errorRed
