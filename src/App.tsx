@@ -11,6 +11,13 @@ interface MyContextValue {
   changeHolderName: (newName: string) => void;
   formattedNumber: string;
   changeFormattedNumber: (newNum: string) => void;
+  cardMonth: string;
+  changeCardMonth: (newMonth: string) => void;
+  cardYear: string;
+  changeCardYear: (newYear: string) => void;
+  cardCvc: string;
+  changeCardCvc: (newCvc: string) => void;
+  
 
 }
 
@@ -24,6 +31,9 @@ interface MyContextProviderProps
 const MyContextProvider: React.FC<MyContextProviderProps> = ({children}) =>
 {
   const [holderName, setHolderName ] = useState<string>('');
+  const [cardMonth, setCardMonth ] = useState<string>('');
+  const [cardYear, setCardYear ] = useState<string>('');
+  const [cardCvc, setCardCvc ] = useState<string>('');
   const [formattedNumber, setFormattedNumber] = useState<string>('');
   
   
@@ -35,12 +45,31 @@ const MyContextProvider: React.FC<MyContextProviderProps> = ({children}) =>
  {
   setFormattedNumber(newNumber);
  }
+ const changeCardMonth = (newMonth: string) =>
+ {
+  setCardMonth(newMonth)
+ }
+ const changeCardYear = (newYear: string) =>
+ {
+  setCardYear(newYear)
+ }
+ const changeCardCvc = (newCvc: string) =>
+ {
+  setCardCvc(newCvc)
+ }
+ 
 
  const contextValue: MyContextValue = {
   holderName,
   changeHolderName,
   formattedNumber,
-  changeFormattedNumber
+  changeFormattedNumber,
+  cardMonth,
+  cardYear,
+  cardCvc,
+  changeCardMonth,
+  changeCardYear,
+  changeCardCvc
  };
 
  return <MyContext.Provider value={contextValue}>{children}</MyContext.Provider>

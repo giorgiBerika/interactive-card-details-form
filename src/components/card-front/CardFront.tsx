@@ -25,16 +25,16 @@ const fillString = (currentInput: string) =>
     {
         fullString = currentInput;
     }
-    // console.log(fullString)
     return fullString;
 }
 
 
 const CardFront: FC<CardFrontProps> = ({}) => 
 {
-    const { holderName, formattedNumber } = useMyContext();
-   
+    const { holderName, formattedNumber, cardMonth,cardYear } = useMyContext();
+    
     let cardholderName = useRef<string>('jane appleseed');
+    let defaultDate = useRef<string>('00');
     let defaultNum = useRef<string>('0000');
     let numberArr = formattedNumber.split(' ');
     
@@ -89,7 +89,12 @@ const CardFront: FC<CardFrontProps> = ({}) =>
               mt-[22.5px]
              `}>
                 <h2>{holderName ||  cardholderName.current}</h2>
-                <span>00/00</span>
+                <div>
+                    <span>{cardMonth || defaultDate.current}</span>
+                    
+                    <span>/{cardYear || defaultDate.current }</span>
+                </div>
+               
              </div>
         </div>
         </>

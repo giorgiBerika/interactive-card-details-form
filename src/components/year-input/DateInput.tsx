@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import { ChangeEvent, FC } from 'react';
+import { useMyContext } from '../../App';
 
 interface DateInputProps{
 
@@ -6,6 +7,19 @@ interface DateInputProps{
 
 const DateInput: FC<DateInputProps> = () => 
 {
+    const { changeCardYear, changeCardMonth} = useMyContext();
+    
+    const monthChangeHandler = (e: ChangeEvent<HTMLInputElement>) => 
+    {
+        const inputVal = e.target.value;
+        changeCardMonth(inputVal);
+    }
+    const yearChangeHandler = (e: ChangeEvent<HTMLInputElement>) => 
+    {
+        console.log(1)
+        const inputVald = e.target.value;
+        changeCardYear(inputVald);
+    }
     return (
         <>
         <div className={`
@@ -20,6 +34,7 @@ const DateInput: FC<DateInputProps> = () =>
            <div>
 
            <input 
+           onChange={(e) => monthChangeHandler(e)}
            type="text"
            placeholder='mm' 
            className={`
@@ -31,7 +46,8 @@ const DateInput: FC<DateInputProps> = () =>
             mr-2.5
             uppercase
             `} /> 
-            <input 
+            <input
+           onChange={(e) => yearChangeHandler(e)} 
            type="text"
            placeholder='yy' 
            className={`

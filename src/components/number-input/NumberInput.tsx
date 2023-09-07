@@ -1,5 +1,5 @@
 import { FC, ChangeEvent } from 'react';
-import { useState } from 'react';
+
 import { useMyContext } from '../../App';
 interface NumberInputProps{
 
