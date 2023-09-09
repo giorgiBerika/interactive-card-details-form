@@ -18,6 +18,18 @@ interface MyContextValue {
   cardCvc: string;
   changeCardCvc: (newCvc: string) => void;
   
+  nameInputerror: boolean;
+  numInputError: boolean;
+  dateInputError: boolean;
+  cvcInputError: boolean;
+  changeNameError: (newName: boolean) => void;
+  changeNumError: (newState: boolean) => void;
+  changeDateError: (newState: boolean) => void;
+  changeCvcError: (newState: boolean) => void;
+
+  formSubmited: boolean;
+  changeFormSubmited: (newState: boolean) => void;
+  
 
 }
 
@@ -34,6 +46,15 @@ const MyContextProvider: React.FC<MyContextProviderProps> = ({children}) =>
   const [cardMonth, setCardMonth ] = useState<string>('');
   const [cardYear, setCardYear ] = useState<string>('');
   const [cardCvc, setCardCvc ] = useState<string>('');
+
+  
+  const [nameInputerror, setNameInputError] = useState<boolean>(false);
+  const [numInputError, setNumInputError] = useState<boolean>(false);
+  const [dateInputError, setDateInputError] = useState<boolean>(false);
+  const [cvcInputError, setCvcInputError] = useState<boolean>(false);
+  
+  const [formSubmited, setFormSubmited] = useState<boolean>(false);
+
   const [formattedNumber, setFormattedNumber] = useState<string>('');
   
   
@@ -57,7 +78,28 @@ const MyContextProvider: React.FC<MyContextProviderProps> = ({children}) =>
  {
   setCardCvc(newCvc)
  }
- 
+
+ const changeNameError = (newCvc: boolean) =>
+ {
+  setNameInputError(newCvc)
+ }
+ const changeNumError = (newCvc: boolean) =>
+ {
+  setNumInputError(newCvc)
+ }
+ const changeDateError= (newCvc: boolean) =>
+ {
+  setDateInputError(newCvc)
+ }
+ const changeCvcError= (newCvc: boolean) =>
+ {
+  setCvcInputError(newCvc)
+ }
+
+ const changeFormSubmited = (newVal: boolean) =>
+ {
+  setFormSubmited(newVal);
+ }
 
  const contextValue: MyContextValue = {
   holderName,
@@ -69,7 +111,19 @@ const MyContextProvider: React.FC<MyContextProviderProps> = ({children}) =>
   cardCvc,
   changeCardMonth,
   changeCardYear,
-  changeCardCvc
+  changeCardCvc,
+   
+  nameInputerror,
+  numInputError,
+  dateInputError,
+  cvcInputError,
+  changeNameError,
+  changeNumError,
+  changeDateError,
+  changeCvcError,
+
+  formSubmited,
+  changeFormSubmited
  };
 
  return <MyContext.Provider value={contextValue}>{children}</MyContext.Provider>

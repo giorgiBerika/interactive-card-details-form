@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { NameInput, NumberInput, CvcInput, ConfirmBtn, DateInput } from '../../components/main';
+import { useMyContext } from '../../App';
 
 interface FormSideProps {
 
@@ -7,8 +8,20 @@ interface FormSideProps {
 
 const FormSide: FC<FormSideProps> = ({}) => 
 {
+    const {formSubmited } = useMyContext();
     return (
         <>
+        {
+        
+        formSubmited 
+        
+        ? 
+            
+            <div>
+                formSubmited
+           </div>
+        
+        : 
         <form className={`
          flex
          flex-col
@@ -26,6 +39,12 @@ const FormSide: FC<FormSideProps> = ({}) =>
             </div>
             <ConfirmBtn />
         </form>
+
+
+        
+        }
+        
+        
         </>
     )
 

@@ -6,11 +6,12 @@ interface CvcInputProps{
 
 const CvcInput: FC<CvcInputProps> = () => 
 {
-    const { changeCardCvc} = useMyContext();
+    const { changeCardCvc, cvcInputError, changeCvcError} = useMyContext();
     const cvcChangeHandler = (e: ChangeEvent<HTMLInputElement>) =>
     {
         const inputVal = e.target.value;
-        changeCardCvc(inputVal)
+        changeCardCvc(inputVal);
+        changeCvcError(false)
     }
     return (
         <>
@@ -32,9 +33,10 @@ const CvcInput: FC<CvcInputProps> = () =>
             w-48
             py-3
             pl-4
+            ${cvcInputError ? 'border-errorRed hover:border-errorRed' : ''}
             
            `} />
-           {false && <span className={`
+           {cvcInputError && <span className={`
              text-errorRed
              text-xs
              leading-normal

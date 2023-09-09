@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useMyContext } from '../../App';
 
 interface ConfirmBtnProps{
 
@@ -6,10 +7,46 @@ interface ConfirmBtnProps{
 
 const ConfirmBtn: FC<ConfirmBtnProps> = () => 
 {
-    
-    return (
+   const {changeFormSubmited,
+     cardMonth, cardYear,
+     cardCvc, numInputError,
+     holderName, formattedNumber,
+     changeDateError, changeCvcError,
+     changeNumError, changeNameError
+    } = useMyContext(); 
+   
+   const onClickHandler = () => 
+   {
+     if(!cardMonth || !cardYear || !cardCvc || numInputError || 
+        !holderName || !formattedNumber)
+     {
+       if(!cardMonth || !cardYear)
+       {
+        changeDateError(true)
+       }
+       if(!cardCvc)
+       {
+        changeCvcError(true)
+       }
+       if(!formattedNumber)
+       {
+        changeNumError(true)
+       }
+       if(!holderName)
+       {
+        changeNameError(true)
+       }
+       changeFormSubmited(false)
+     }else{
+       
+       changeFormSubmited(true);
+     }
+   }
+   
+   return (
         <>
         <button 
+        onClick={() => onClickHandler()}
         type='button' 
         className={`
          rounded-[8px]

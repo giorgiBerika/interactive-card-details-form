@@ -7,19 +7,24 @@ interface DateInputProps{
 
 const DateInput: FC<DateInputProps> = () => 
 {
-    const { changeCardYear, changeCardMonth} = useMyContext();
+    const { changeCardYear, changeCardMonth, dateInputError, changeDateError, formSubmited} = useMyContext();
     
     const monthChangeHandler = (e: ChangeEvent<HTMLInputElement>) => 
     {
+        
         const inputVal = e.target.value;
         changeCardMonth(inputVal);
+        changeDateError(false);
     }
+    
     const yearChangeHandler = (e: ChangeEvent<HTMLInputElement>) => 
-    {
-        console.log(1)
+    {   
+        
         const inputVald = e.target.value;
         changeCardYear(inputVald);
+        changeDateError(false);
     }
+
     return (
         <>
         <div className={`
@@ -45,6 +50,7 @@ const DateInput: FC<DateInputProps> = () =>
             pr-29
             mr-2.5
             uppercase
+            ${dateInputError ? 'border-errorRed hover:border-errorRed' : ''}
             `} /> 
             <input
            onChange={(e) => yearChangeHandler(e)} 
@@ -57,9 +63,10 @@ const DateInput: FC<DateInputProps> = () =>
             pl-4
             pr-29
             uppercase
+            ${dateInputError ? 'border-errorRed hover:border-errorRed' : ''}
             `} /> 
             </div>
-            {false && <span className={`
+            {dateInputError && <span className={`
              text-errorRed
              text-xs
              leading-normal

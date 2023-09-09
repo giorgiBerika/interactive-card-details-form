@@ -6,12 +6,13 @@ interface NameInputProps{
 
 const NameInput: FC<NameInputProps> = ({}) => 
 {
-    const { changeHolderName } = useMyContext();
+    const { changeHolderName, nameInputerror, changeNameError } = useMyContext();
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) =>
     {
         // 
         const nameInput = e.target;
-        changeHolderName(nameInput.value)
+        changeHolderName(nameInput.value);
+        changeNameError(false);
         
     } 
     return (
@@ -34,6 +35,7 @@ const NameInput: FC<NameInputProps> = ({}) =>
             w-96
             py-3
             pl-4
+            ${nameInputerror ? 'border-errorRed hover:border-errorRed' : ''}
            `}
             onChange={(e) => onChangeHandler(e)} 
            /> 
