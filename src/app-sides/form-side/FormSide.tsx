@@ -46,7 +46,8 @@ const FormSide: FC<FormSideProps> = ({}) =>
                 className={`
                     rounded-[8px]
                     py-4
-                    px-40
+                    xl:px-40
+                    px-10
                     text-commonWhite
                     bg-deepViolet
                     capitalize

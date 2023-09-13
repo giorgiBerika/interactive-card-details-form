@@ -4,7 +4,6 @@ import './App.css';
 import React, { useState, useContext, createContext, ReactNode } from "react";
 import bgMainDesktop from './assets/bg-main-desktop.png';
 
-import bgMainMobile from './assets/bg-main-mobile.png';
 
 interface MyContextValue {
   holderName: string;

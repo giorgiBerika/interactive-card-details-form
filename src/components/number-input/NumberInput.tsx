@@ -46,7 +46,8 @@ const NumberInput: FC<NumberInputProps> = () =>
            className={`
             input-style
             max-w-sm
-            w-96
+            xl:w-96
+            w-80
             py-3
             pl-4
             ${errorState || numInputError ? 'border-errorRed hover:border-errorRed' : ''}

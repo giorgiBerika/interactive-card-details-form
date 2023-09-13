@@ -51,7 +51,8 @@ const ConfirmBtn: FC<ConfirmBtnProps> = () =>
         className={`
          rounded-[8px]
          py-4
-         px-40
+         xl:px-40
+         px-3
          text-commonWhite
          bg-deepViolet
          capitalize

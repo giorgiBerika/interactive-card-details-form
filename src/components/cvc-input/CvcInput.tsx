@@ -30,7 +30,8 @@ const CvcInput: FC<CvcInputProps> = () =>
            placeholder='e.g.123' 
            className={`
             input-style
-            w-48
+            xl:w-48
+            w-40
             py-3
             pl-4
             ${cvcInputError ? 'border-errorRed hover:border-errorRed' : ''}

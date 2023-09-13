@@ -15,7 +15,8 @@ const CardSide: FC<CardSideProps> = ({}) =>
          mt-8
          xl:mt-0
          xl:gap-9
-         
+         sm:translate-x-[0]
+         translate-x-[-15%]
         `}>
             <CardFront />
             <CardBack />

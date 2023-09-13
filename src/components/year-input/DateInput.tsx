@@ -7,7 +7,7 @@ interface DateInputProps{
 
 const DateInput: FC<DateInputProps> = () => 
 {
-    const { changeCardYear, changeCardMonth, dateInputError, changeDateError, formSubmited} = useMyContext();
+    const { changeCardYear, changeCardMonth, dateInputError, changeDateError} = useMyContext();
     
     const monthChangeHandler = (e: ChangeEvent<HTMLInputElement>) => 
     {
@@ -44,7 +44,8 @@ const DateInput: FC<DateInputProps> = () =>
            placeholder='mm' 
            className={`
             input-style
-            w-20
+            xl:w-20
+            w-16
             py-3
             pl-4
             pr-29
@@ -58,7 +59,8 @@ const DateInput: FC<DateInputProps> = () =>
            placeholder='yy' 
            className={`
             input-style
-            w-20
+            xl:w-20
+            w-16
             py-3
             pl-4
             pr-29

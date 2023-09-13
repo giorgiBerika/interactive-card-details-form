@@ -32,7 +32,8 @@ const NameInput: FC<NameInputProps> = ({}) =>
            className={`
             input-style
             max-w-sm
-            w-96
+            xl:w-96
+            w-80
             py-3
             pl-4
             ${nameInputerror ? 'border-errorRed hover:border-errorRed' : ''}
