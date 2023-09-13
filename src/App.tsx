@@ -149,6 +149,8 @@ function App() {
       w-screen
       min-h-screen
       flex
+      xl:flex-row
+      flex-col
       items-center
       justify-around
       relative
@@ -164,8 +166,11 @@ function App() {
       className={`
        absolute
        top-0
-       left-0
-       min-h-screen
+       xl:left-0
+       xl:w-auto
+       w-full
+       xl:min-h-screen
+       h-60
       `} />
       <CardSide />
       <FormSide />

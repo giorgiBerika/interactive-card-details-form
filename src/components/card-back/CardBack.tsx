@@ -14,12 +14,16 @@ const CardBack: FC<CardBackProps> = () =>
         <div className={`
          max-w-md
          w-full
-         h-64
+         xl:h-64
+         h-40
          
          bg-cover
          bg-center
          rounded-[10px]
          translate-x-[96px]
+         
+         xl:translate-y-[0%]
+         translate-y-[-100%]
          cursor-pointer
          relative
 
@@ -27,11 +31,14 @@ const CardBack: FC<CardBackProps> = () =>
         `}
         style={{
             backgroundImage: `url(${backBackground})`
-        }}>
+        }}
+        >
             <span className={`
              absolute
-             top-[114px]
-             left-[358px]
+             xl:top-[114px]
+             xl:left-[358px]
+             top-[70px]
+             right-[30px]
              text-sm
              font-medium
              leading-normal

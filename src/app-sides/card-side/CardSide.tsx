@@ -12,7 +12,10 @@ const CardSide: FC<CardSideProps> = ({}) =>
         <div className={`
          flex
          flex-col
-         gap-9
+         mt-8
+         xl:mt-0
+         xl:gap-9
+         
         `}>
             <CardFront />
             <CardBack />

@@ -41,9 +41,13 @@ const CardFront: FC<CardFrontProps> = ({}) =>
 
     return (
         <>
+            {/* max-w-md  */}
         <div className={`
             rounded-[10px]
-            max-w-md
+            xl:max-w-[410px]
+            max-w-[285px]
+            xl:h-auto
+            h-40
             w-full
             pt-7
             pr-8
@@ -53,23 +57,36 @@ const CardFront: FC<CardFrontProps> = ({}) =>
             bg-cover
             bg-center
             z-50
+            xl:translate-y-[0%]
+            translate-y-[55%]
         `} 
          style={{
             backgroundImage: `url(${frontBackground})`,
-            width: '410px'
+            // width: '410px',
+
             }}
         >
-            <img src={ovalsImg}  alt='Ovals figures'/>
+            <img 
+            src={ovalsImg}  
+            alt='Ovals figures'
+            className='
+             xl:w-auto
+             xl:h-auto
+             h-8
+             w-14
+            ' />
              <div className={`
               flex
               items-center
               gap-3
-              text-28
+              xl:text-28
+              text-lg
               font-medium
               tracking-wider
               leading-normal
               text-commonWhite
-              mt-[64px]
+              xl:mt-[64px]
+              mt-[20px]
              ` }>
                <span>{(numberArr[0]) ? fillString(numberArr[0]) : defaultNum.current}</span>
                <span>{(numberArr[1]) ? fillString(numberArr[1]) : defaultNum.current}</span>
@@ -81,7 +98,8 @@ const CardFront: FC<CardFrontProps> = ({}) =>
               items-center
               justify-between
               text-commonWhite
-              text-sm
+              xl:text-sm
+              text-xs
               leading-normal
               font-normal
               tracking-wide
